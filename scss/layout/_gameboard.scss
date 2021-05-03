@@ -1,0 +1,52 @@
+.gameboard {
+    width: calc(100% - 5px);
+    @include flexCenter;
+    justify-content: space-evenly;
+    margin-left: 5px;
+    @include mq(375px) {
+        width: calc(100% - 15px);
+        margin-left: 15px;
+    }
+
+    .gameboard__square {
+        width: 33.33%;
+        @include flexCenter;
+
+        img {
+            width: 100%;
+            cursor: pointer;
+            transition: 500ms;
+            outline: none;
+        }
+
+        img:hover, 
+        img:focus {
+            width: 110%;
+            filter: brightness(120%);
+        }
+
+        p {
+            font-size: 5rem;
+            animation: fadeInFromNone 1s ease-in;
+            @include mq(768px) {
+                font-size: 6rem;
+            }
+        }
+
+        .fadeOut {
+            opacity: 0;
+            animation: fadeOut 1s ease-in-out;
+        }
+    }
+
+    .selected {
+        margin: 0 auto;
+        transition: margin 0.5s linear;
+    }
+
+    .not-selected {
+        visibility: hidden;
+        width: 0;
+        transition: width 0.5s linear, visibility 0.5s linear;
+    }
+}

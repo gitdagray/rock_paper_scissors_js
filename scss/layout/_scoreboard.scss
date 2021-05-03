@@ -1,0 +1,67 @@
+.scoreboard {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    @include flexCenter;
+    flex-wrap: wrap;
+    @include mq(800px) {
+        justify-content: space-between;
+        max-width: 800px;
+    }
+
+    .scoreboard__section {
+        width: calc(100% - 5px);
+        max-width: 500px;
+        @include mq(800px) {
+            max-width: 395px;
+        }
+
+        .scoreboard__header {
+            width: 100%;
+            background-color: $text-color;
+            color: $bgcolor;
+            @include flexCenter;
+            justify-content: space-between;
+
+            p {
+                margin: 0 10px;
+            }
+        }
+
+        .scoreboard__row {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 100%;
+            font-size: 1.25rem;
+
+            .scoreboard__score {
+                @include flexCenter;
+                width: 50%;
+                min-height: 2.5rem;
+                border: 2px solid $text-color;
+                min-height: 2.5rem;
+                border: 2px solid $text-color;
+                @include mqMinWMaxH(768px, 1024px) {
+                    min-height: 1.5rem;
+                }
+            }
+
+            .scoreboard__score:nth-child(odd) {
+                border-right: 0;
+            }
+
+            .scoreboard__score:focus {
+                outline: none;
+                background-color: $text-color;
+                color: $bgcolor;
+            }
+        }
+    }
+
+    .scoreboard__section:last-child {
+        margin-top: 10px;
+        @include mq(800px) {
+            margin-top: 0;
+        }
+    }
+}

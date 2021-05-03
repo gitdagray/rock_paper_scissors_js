@@ -1,0 +1,22 @@
+.center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.playAgain {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0.75rem;
+    font-size: 2rem;
+    border-radius: 25px;
+    opacity: 0.8;
+    outline: none;
+    cursor: pointer;
+}
