@@ -21,7 +21,7 @@
 
         img:hover, 
         img:focus {
-            width: 110%;
+            transform: scale(1.1);
             filter: brightness(120%);
         }
 
